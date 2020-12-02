@@ -13,12 +13,8 @@ import Deck from './components/Deck';
 export default function App() {
   return (
     <Provider store={createStore(reducer)}>
-      <View>
-        <DeckList />
-        <NewQuestion />
+      <View>     
         <NewDeck />
-        <Quiz />
-        <Deck />
       </View>
     </Provider>
   );
