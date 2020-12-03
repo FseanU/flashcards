@@ -15,6 +15,7 @@ export default function App() {
     <Provider store={createStore(reducer)}>
       <View>     
         <NewDeck />
+        <NewQuestion />
       </View>
     </Provider>
   );
