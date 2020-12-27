@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, Button, TextInput } from 'react-native'
+import { addCardToDeck } from '../utils/api'
 
 class NewQuestion extends React.Component {
   state = {
@@ -21,9 +22,14 @@ class NewQuestion extends React.Component {
   }
 
   onPress = () => {
-    
+    const { question, answer } = this.state
     // todo: Update store
     // todo: Update localstorage
+    const deck = {
+      card: this.state,
+      deckTitle: '',
+    }
+    addCardToDeck(deck)
   
     this.setState({
       question: '',
