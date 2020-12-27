@@ -31,7 +31,7 @@ export async function saveDeckTitle(deckTitle) {
       questions: [],
     }
     const jsonDeck = JSON.stringify(deck)
-
+    
     await AsyncStorage.setItem(deckTitle, jsonDeck)
   } catch(e) {
     console.log(e)
@@ -44,15 +44,17 @@ export async function addCardToDeck({deckTitle, card}) {
   try {
     // 1. get the deck cards 
     const deck = await AsyncStorage.getItem(deckTitle)
-    const newCards = deck.questions.concat([card])
+    const objDeck = JSON.parse(deck)
+    const newCards = objDeck.questions.concat([card])
     const newDeck = {
-      ...deck,
+      ...objDeck,
       questions: newCards,
     }
     const jsonDeck = JSON.stringify(newDeck)
 
     // 2. update deck value
     await AsyncStorage.setItem(deckTitle, jsonDeck)
+  } catch(e) {
+    console.log(e)
   }
-
 }

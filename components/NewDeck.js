@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { View, Text, Button, TextInput } from 'react-native'
 import { addDeck } from '../actions'
+import { saveDeckTitle } from '../utils/api'
 
 class NewDeck extends React.Component {
   state = {
@@ -22,14 +23,16 @@ class NewDeck extends React.Component {
       [value]: {
         title: value
       }}))
-    
+
+    // Update localstorage
+    saveDeckTitle(value)
+
     this.setState({
       value: ''
     })
 
     // todo: Navigate to Deck view
 
-    // todo: Update localstorage
   }
 
   render() {
