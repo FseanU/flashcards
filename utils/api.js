@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+// import { _saveExampleDecks } from './_DATA'
 
 // getDecks: return all of the decks along with their titles, questions, and answers.
 export async function getDecks() {
@@ -58,3 +59,8 @@ export async function addCardToDeck({deckTitle, card}) {
     console.log(e)
   }
 }
+
+// export function getInitialData() {
+//   return _saveExampleDecks()
+//     .then(i => console.log(i))
+// }
