@@ -1,6 +1,7 @@
 import { RECEIVE_DECKS, ADD_DECK } from '../actions'
+import { decks as initialState } from '../utils/_DATA'
 
-function decks (state = {}, action) {
+function decks (state = initialState, action) {
   switch (action.type) {
     case RECEIVE_DECKS :
       return {
