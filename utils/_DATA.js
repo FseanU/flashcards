@@ -1,5 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 export let decks = {
   React: {
     title: 'React',
@@ -24,21 +22,3 @@ export let decks = {
     ]
   }
 }
-
-// export function _getDecks() {
-//   return new Promise((res, rej) => {
-//     setTimeout(() => res({...decks}), 1000)
-//   })
-// }
-
-// export function _saveExampleDecks() {
-//   const deckNames = Object.keys(decks)
-//   deckNames.map(async(deckName) => {
-//     try {
-//       const jsonValue = JSON.stringify(decks[deckName])
-//       await AsyncStorage.setItem(deckName, jsonValue)
-//     } catch(e) {
-//       console.log(e)
-//     }
-//   })
-// }
